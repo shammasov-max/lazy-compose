@@ -90,11 +90,9 @@ function compose(...args: Part<any, any>[]) {
 
     let result = compose(args[args.length - 2], args[args.length - 1])
 
-    for (let i = args.length - 3; i >= 0; i--) {
-
+    for (let i = args.length - 3; i >= 0; i--)
         // @ts-ignore
         result = compose(args[i], result)
-    }
 
     return result
 
@@ -117,8 +115,8 @@ const composeCache = (() => {
                 return f.name + (counter++)
 
             const hash = 'f' + (counter++)
-            console.warn(`Function has no name, this could be a cause of cache memory leaks.
-                            Registered hash = ${hash} . Body `, f)
+            // console.warn(`Function has no name, this could be a cause of cache memory leaks.
+            //                Registered hash = ${hash} . Body `, f)
             return hash
         }
 
@@ -201,4 +199,5 @@ const cacheSymbol = Symbol('@sha/lasy-composition-cache')
 const api = Object.assign(compose, {[cacheSymbol]: {compositionsByHash, functions}})
 
 export {fold, api as compose, internalSymbol, cacheSymbol}
+
 export default api

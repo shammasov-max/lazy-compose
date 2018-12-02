@@ -1,8 +1,10 @@
 Referential transparent lazy composition.
 
+
 ### Abstract 
 Композиция функций это чистая функция, которая зависит только от аргументов.
-Таким образов композируя одни и те же функции в одинаковом порядке мы должны получить идентичную фукнцию.
+Таким образов композируя одни и те же функции в одинаковом порядке мы должны получить идентичную фукнцию
+.
 
 ### Motivation 
 
@@ -63,10 +65,9 @@ functions for same arguments
 In the following example elements of the list will not rerender with out changing id
     
     ```jsx
-    import {compose, constant} from './src/lazyCompose'
-    // constant - returns the same memoized function for each argrum
+    // constant - returns memoized identity function for an argument 
     // just like React.useCallback
-    import {compose, constant} from './src/lazyComposition'
+    import {compose, constant} from './src/lazyCompose'
     
     const List = ({dispatch, data}) =>
         data.map( id =>
@@ -75,6 +76,7 @@ In the following example elements of the list will not rerender with out changin
                 onClick={compose(dispatch, makeAction, contsant(id)) 
             />
         )
+    )
         
     const Button = React.memo( props => 
         <button {...props} />
@@ -93,7 +95,7 @@ lazy composition folds plain list of functions, with no additional closures
     
     ```jsx
     import {memoize, mergeRight} from 'ramda'
-    import {constant, compose} from './src/lazyComposition'
+    import {constant, compose} from './src/lazyCompose'
     
     
     const defaultProps = memoize(mergeRight)
@@ -101,7 +103,7 @@ lazy composition folds plain list of functions, with no additional closures
     const withState = memoize( defaultState =>
         props => {
             const [state, setState] = React.useState(defaultState)
-            rturn {...props, state, setState}
+            return {...props, state, setState}
         }
     )
 
@@ -120,13 +122,11 @@ lazy composition folds plain list of functions, with no additional closures
         Component, 
         withCounter,
         defaultProps({label: 'Clicks'}),
-    }
+    )
 
     ```
 
 
 5. Lazy Monads, where map - is a  binary lazy composition, 
 with possibility of strict equality implementation
-
-
 

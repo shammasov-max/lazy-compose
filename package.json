@@ -1,9 +1,10 @@
 {
   "name": "lazy-compose",
   "version": "0.1.0",
-  "description": "Function composition monoid with lazy evaluation and equatily",
+  "description": "Function composition monoid with lazy evaluation and strict equality",
   "main": "dist/index.js",
-  "files": [],
+  "files": ["src",
+    "dist"],
   "types": "./src/index.ts",
   "scripts": {
     "test": "jest",
@@ -14,11 +15,12 @@
     "url": "git+https://github.com/FlaPS/lazy-compose.git"
   },
   "keywords": [
-    "Composition",
+    "lazy",
+    "composition",
     "abstract",
     "data",
     "types",
-    "setoid",
+    "semigroppoid",
     "monoid",
     "TypeScript"
   ],
@@ -35,9 +37,7 @@
     "tslint": "^5.11.0",
     "typescript": "^3.1.6",
     "@types/ramda": "^0.25.42",
-    "ramda": "^0.26.0"
-  },
-  "dependencies": {
+    "ramda": "^0.26.0",
     "@types/redux": "^3.6.0",
     "redux": "^4.0.1"
   }

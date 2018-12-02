@@ -4,8 +4,7 @@
     "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
-    "declaration": true,
-    "outFile": "dist/index.js",
+    "outDir": "dist/",
     // Don't emit; allow Babel to transform files.
     //"noEmit": true,
     // Enable strictest settings like strictNullChecks & noImplicitAny.
@@ -14,9 +13,7 @@
     "isolatedModules": false,
     // Import non-ES modules as default imports.
     "esModuleInterop": true,
-
     "lib": ["es6", "dom", "es2017.object", "es2017"],
-    "sourceMap": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noImplicitAny": false,

@@ -1,4 +1,3 @@
-import {cacheSymbol} from './lazyCompose'
 const constantSymbol = Symbol('@sha/lazy-compose/constant')
 
 const cache = new Map<any, Function>()
@@ -10,7 +9,5 @@ export default Object.assign(
 
         return  cache.get(value) as any as (...value: any[]) => T
      },
-     {[cacheSymbol]: cache},
+     {[constantSymbol]: cache},
  )
-
-export {cache as constantCache}
