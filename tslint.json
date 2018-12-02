@@ -1,0 +1,54 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended"
+  ],
+  "jsRules": {},
+  "rules": {
+    "quotemark": [true, "single", "avoid-escape", "avoid-template"],
+    "ordered-imports": false,
+    "semicolon": [true, "never"],
+    "no-consecutive-blank-lines": [true, 2],
+    "jsx-boolean-value": false,
+    "trailing-comma": [true, {
+      "multiline": {
+        "objects": "always",
+        "arrays": "always",
+        "functions": "always",
+        "typeLiterals": "never"
+      }
+    }],
+    "object-literal-sort-keys": false,
+
+    "object-literal-key-quotes": [false, "as-needed"],
+    "arrow-parens": [true, "ban-single-arg-parens"],
+    "no-console": false,
+    "max-classes-per-file": false,
+
+    "interface-over-type-literal": false,
+    "only-arrow-functions": false,
+    "no-shadowed-variable": false,
+    "interface-name": false,
+    "no-empty-interface": false,
+    "variable-name": [ true,
+      "check-format",
+      "allow-pascal-case",
+      "allow-leading-underscore",
+      "allow-trailing-underscore"
+    ],
+    "no-string-throw": false,
+    "array-type": false,
+    "no-string-literal": false,
+    "curly": false,
+    "jsx-no-lambda": false,
+    "prefer-for-of": false,
+    "indent": [true, "spaces", 4],
+    "member-access": false,
+    "no-unused-variable": [true, { "ignore-pattern": "^React$" }],
+    "jsx-no-multiline-js": false,
+    "jsx-wrap-multiline": false,
+    "ban-types": [true, ["Object", "Use {} instead."], ["String", "Use 'string' instead"]],
+    "member-ordering": false
+  },
+  "rulesDirectory": []
+}
