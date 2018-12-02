@@ -16,7 +16,7 @@ Referential transparent lazy composition.
 
 ### Solution 
 Create monoid (or Semigroppoid & Category) in terms of fantasy-land for function composition.
-Laws to for check
+Laws:
 
 
 ```typescript
@@ -59,7 +59,8 @@ functions for same arguments
     ```
 
 
-3. Memoized callbacks in react which directly composable with dispatch
+3. Memoized react callbacks directly composable with dispatch. 
+In the following example elements of the list will not rerender with out changing id
     
     ```jsx
     import {compose, constant} from './src/lazyCompose'
@@ -70,6 +71,7 @@ functions for same arguments
     const List = ({dispatch, data}) =>
         data.map( id =>
             <Button
+                key={id}
                 onClick={compose(dispatch, makeAction, contsant(id)) 
             />
         )
@@ -87,10 +89,12 @@ functions for same arguments
 
 
 4. Lazy composition of react components with no extra HOCs. 
-All composition folds plain list of functions
+lazy composition folds plain list of functions, with no additional closures
     
     ```jsx
-    import {memoize, mergeRight} from 'ramda
+    import {memoize, mergeRight} from 'ramda'
+    import {constant, compose} from './src/lazyComposition'
+    
     
     const defaultProps = memoize(mergeRight)
     
