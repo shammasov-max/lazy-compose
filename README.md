@@ -125,8 +125,8 @@ lazy composition folds plain list of functions, with no additional closures
     ```
 
 
-5. Lazy Monads, where map - is a  binary lazy compostion, 
-with strict equality implementation
+5. Lazy Monads, where map - is a  binary lazy composition, 
+with possibility of strict equality implementation
 
 
 
